@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div>
-    nh
+    <mt-button type="default">nn</mt-button>
   </div>
 </template>
 
