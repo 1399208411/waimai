@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div>
-    <router-link to="/seller">商家</router-link>
+    商品
   </div>
 </template>
 
