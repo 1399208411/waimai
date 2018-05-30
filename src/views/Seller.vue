@@ -1,5 +1,6 @@
 <template>
   <div class="page-navbar">
+    <seller-header :seller="seller"></seller-header>
     <mt-navbar class="page-part" v-model="selected">
       <mt-tab-item id="1">点餐</mt-tab-item>
       <mt-tab-item id="2">评价</mt-tab-item>
@@ -7,7 +8,6 @@
     </mt-navbar>
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="1">
-
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
         <goods></goods>
@@ -21,6 +21,9 @@
 
 <script>
   import Goods from '../components/Goods/Goods.vue'
+  import SellerHeader from '../components/SellerHeader/Header.vue'
+  const log = console.log;
+  const ERR_OK = 0;
   export default {
     data() {
       return {
@@ -29,10 +32,18 @@
       };
     },
     components: {
-      Goods
+      Goods,
+      SellerHeader
     },
     computed: {},
     created() {
+      this.$http.get('/api/seller').then((response)=>{
+        let res = response.body;
+        if(res.errno===ERR_OK){
+          this.seller = res.data;
+          log(this.seller);
+        }
+      });
     },
     mounted() {
 

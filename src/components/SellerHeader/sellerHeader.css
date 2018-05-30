@@ -1,0 +1,28 @@
+
+.seller-head{
+  height: 13em;
+  width: 100%;
+  background-color: deepskyblue;
+}
+.seller-head .shop-cover {
+  margin-top: 40px;
+  height: 90px;
+  width: 100%;
+}
+.seller-head .sign{
+  position:absolute;
+  top: 110px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 70px;
+  width: 70px;
+  z-index: 99;
+  background-color: white;
+}
+.description{
+  font-size: 12px;
+}
+.remark{
+  font-size: 10px;
+  color: #999;
+}

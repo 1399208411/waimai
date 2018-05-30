@@ -10,6 +10,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
+const express = require('express');
+const app = express(); //请求server
+var appData = require('../mock/data.json');//加载数据文件
+//获取appData的数据
+var seller = appData.seller;
+var goods = appData.goods;
+var ratings = appData.ratings;
+var apiRoutes = express.Router();
+app.use('/api',apiRoutes);//通过路由请求数据
+
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
@@ -43,7 +53,27 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     watchOptions: {
       poll: config.dev.poll,
     },
-    disableHostCheck: true//解决natapp  Invalid Host header问题
+    disableHostCheck: true,//解决natapp  Invalid Host header问题
+    before(app){
+      app.get('/api/seller',(req,res)=>{
+        res.json({
+          errno:0,
+          data:seller
+        });
+      });//
+      app.get('/api/goods',(req,res)=>{
+        res.json({
+          errno:0,
+          data:goods
+        });
+      });//
+      app.get('/api/ratings',(req,res)=>{
+        res.json({
+          errno:0,
+          data:ratings
+        });
+      });//
+    }
   },
   plugins: [
     new webpack.DefinePlugin({
