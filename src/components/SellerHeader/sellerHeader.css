@@ -19,10 +19,23 @@
   z-index: 99;
   background-color: white;
 }
+.seller.shop-title{
+
+}
 .description{
   font-size: 12px;
 }
 .remark{
   font-size: 10px;
   color: #999;
+}
+.seller.discount{
+  display: flex;
+  margin-left: 5em;
+  margin-right: 5em;
+  font-size: 10px;
+  color: #999;
+}
+.discount-count{
+  margin-left: auto;
 }

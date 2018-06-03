@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Home.vue'
 import Seller from '../views/Seller.vue'
-import Goods from '../components/Goods/Goods.vue'
+import Goods from '../components/goods/Goods.vue'
 import Test from '../views/test.vue'
 
 Vue.use(Router)

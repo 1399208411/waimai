@@ -8,19 +8,18 @@
     </mt-navbar>
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="1">
+        <goods :seller="seller"></goods>
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
-        <goods></goods>
       </mt-tab-container-item>
       <mt-tab-container-item id="3">
-
       </mt-tab-container-item>
     </mt-tab-container>
   </div>
 </template>
 
 <script>
-  import Goods from '../components/Goods/Goods.vue'
+  import Goods from '../components/goods/good.vue'
   import SellerHeader from '../components/SellerHeader/Header.vue'
   const log = console.log;
   const ERR_OK = 0;

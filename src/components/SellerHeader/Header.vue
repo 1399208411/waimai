@@ -23,6 +23,11 @@
         <div class="description">4.8 月售610单 蜂鸟快送 约40分钟 距离4.8km</div>
         <div class="remark">欢迎光临，用餐高峰请提前下单 谢谢</div>
       </div>
+      <div class="seller discount">
+        <img src="./img/decrease_2@2x.png" height="16" width="auto">
+        <span>&nbsp;满80-40</span>
+        <span class="discount-count">26个优惠></span>
+      </div>
     </section>
   </div>
 </template>

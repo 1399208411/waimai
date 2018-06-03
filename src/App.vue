@@ -20,7 +20,7 @@ export default {
   margin: 0;
   padding: 0 0;
 }
-html,body,h1{
+html,body,h1,ul,li{
   margin: 0;
   padding: 0;
 }

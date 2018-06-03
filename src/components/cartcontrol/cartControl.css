@@ -1,0 +1,47 @@
+.cart-control {
+  font-size: 0;
+  display: inline-block;
+}
+
+.cart-decrease{
+  display: inline-block;
+  vertical-align: top;
+  padding: 6px;
+  line-height: 24px;
+  opacity: 1;
+  transform: translate3D(0,0,0);
+}
+  /* 可以设置不同的进入和离开动画 */
+  /* 设置持续时间和动画函数 */
+.decrease-move-enter-active,.decrease-move-leave-active  {
+  transition: all .4s linear;
+}
+.decrease-move-enter, .decrease-move-leave-to
+  /* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(24px);
+  opacity: 0;
+}
+.decrease-move-enter img, .decrease-move-leave-to img{
+  transform: rotate(180deg);
+}
+.cart-decrease img{
+  transition: all 0.4s linear;
+}
+
+.cart-count {
+  display: inline-block;
+  vertical-align: top;
+  width: 12px;
+  padding-top: 6px;
+  line-height: 24px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgb(147,153,159);
+}
+.cart-add{
+  display: inline-block;
+  vertical-align: top;
+  padding: 6px;
+  line-height: 24px;
+}
