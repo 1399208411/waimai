@@ -7,12 +7,12 @@
       <mt-tab-item id="3">商家</mt-tab-item>
     </mt-navbar>
     <mt-tab-container v-model="selected">
-      <mt-tab-container-item id="1">
+      <mt-tab-container-item id="1" class="tab-item">
         <goods :seller="seller"></goods>
       </mt-tab-container-item>
-      <mt-tab-container-item id="2">
+      <mt-tab-container-item id="2" class="tab-item">
       </mt-tab-container-item>
-      <mt-tab-container-item id="3">
+      <mt-tab-container-item id="3" class="tab-item">
       </mt-tab-container-item>
     </mt-tab-container>
   </div>
@@ -40,7 +40,6 @@
         let res = response.body;
         if(res.errno===ERR_OK){
           this.seller = res.data;
-          log(this.seller);
         }
       });
     },
@@ -61,8 +60,7 @@
     border-bottom:1px solid rgba(7,17,27,0.1);
   }
   .tab-item {
-    flex: 1;
-    text-align: center;
+    margin-top: 4px;
   }
   .tab-item > router-link{
     display: block;

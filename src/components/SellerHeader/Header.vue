@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div class="seller-head">
-    <mt-header fixed title="乐凯撒披萨" style="font-weight: 700">
+    <mt-header fixed title="乐凯撒披萨" style="font-weight: 700;z-index: 999;">
       <router-link to="/" slot="left">
         <mt-button icon="back">返回</mt-button>
       </router-link>
