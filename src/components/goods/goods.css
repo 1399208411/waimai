@@ -1,7 +1,7 @@
 .goods {
   display: flex;
   width: 100%;
-  height:520px;
+  height: 240px;
   overflow: hidden;
   /*background-color: #00b43c;*/
 }
@@ -101,6 +101,7 @@
   display: flex;
   margin: 18px;
   padding-bottom: 18px;
+  text-align: left;
   /*border-bottom: 1px solid rgba(7,17,27,0.1);*/
 }
 .food-item:last-child{
@@ -146,7 +147,7 @@
   margin-bottom: 10px;
 }
 .extra.food .count{
-  margin-right: 12px;
+  margin-right: 10px;
 }
 .price.food{
   font-weight: 700;

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import Goods from '../components/goods/good.vue'
+  import Goods from '../components/goods/Goods.vue'
   import SellerHeader from '../components/SellerHeader/Header.vue'
   const log = console.log;
   const ERR_OK = 0;
