@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div class="goods">
+  <div class="goods" id="goods">
     <div class="menu-wrapper">
       <ul>
         <li v-for="(item,index) in goods" class="menu-item" :class="{'current': currentIndex===index }" @click="selectMenu(index)">
@@ -31,7 +31,7 @@
                   <span class="old" v-show="food.oldPrice">{{food.oldPrice}}</span>
                 </div>
                 <div class="cart-control-wrapper">
-                  <!--<cart-control :food="food"></cart-control>-->
+                  <cart-control :food="food"></cart-control>
                 </div>
               </div>
             </li>
@@ -39,7 +39,7 @@
         </li>
       </ul>
     </div>
-    <!--<shop-cart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shop-cart>-->
+    <shop-cart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shop-cart>
   </div>
 </template>
 <script>

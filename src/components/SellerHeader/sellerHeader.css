@@ -1,21 +1,21 @@
 
 .seller-head{
-  height: 13em;
+  height: 16em;
   width: 100%;
-  /*background-color: deepskyblue;*/
+  background-color: deepskyblue;
 }
 .seller-head .shop-cover {
   margin-top: 40px;
-  height: 90px;
+  height: 140px;
   width: 100%;
 }
 .seller-head .sign{
   position:absolute;
-  top: 110px;
+  top: 160px;
   left: 50%;
   transform: translate(-50%,-50%);
-  height: 70px;
-  width: 70px;
+  height: 80px;
+  width: 80px;
   z-index: 99;
   background-color: white;
 }

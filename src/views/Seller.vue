@@ -1,12 +1,13 @@
 <template>
   <div class="page-navbar">
-    <seller-header :seller="seller"></seller-header>
-    <mt-navbar class="page-part" v-model="selected">
+    <seller-header :seller="seller" v-show="headerShow"></seller-header>
+    <!--<a @dblclick="hideHeader">ggg</a>-->
+    <mt-navbar class="page-part" v-model="selected" @click.native="hideHeader">
       <mt-tab-item id="1">点餐</mt-tab-item>
       <mt-tab-item id="2">评价</mt-tab-item>
       <mt-tab-item id="3">商家</mt-tab-item>
     </mt-navbar>
-    <mt-tab-container v-model="selected">
+    <mt-tab-container v-model="selected" id="tab-container-item">
       <mt-tab-container-item id="1" class="tab-item">
         <goods :seller="seller"></goods>
       </mt-tab-container-item>
@@ -27,7 +28,8 @@
     data() {
       return {
         seller:{},
-        selected:'1'
+        selected:'1',
+        headerShow:true
       };
     },
     components: {
@@ -42,12 +44,17 @@
           this.seller = res.data;
         }
       });
+
+
     },
     mounted() {
 
     },
     methods: {
-
+      hideHeader(){
+        this.headerShow = false;
+        document.getElementById('goods').style.setProperty('top','50px','important');
+      }
     }
   }
 </script>

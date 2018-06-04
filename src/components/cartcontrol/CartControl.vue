@@ -3,19 +3,12 @@
   <div class="cart-control">
     <transition name="decrease-move">
       <div class="cart-decrease" v-show="food.count>0" @click="decreaseCart">
-        <img src="./img/remove.svg" width="24" height="24">
+        <img src="./img/remove.svg" width="22" height="22">
       </div>
     </transition>
     <div class="cart-count" v-show="food.count>0">{{food.count}}</div>
     <div class="cart-add" @click="addCart">
-      <img src="./img/addBig.svg" width="24" height="24">
-    </div>
-    <div class="ball-container">
-      <transition name="ball=drop">
-        <div v-for="ball in balls" v-show="ball.show" class="ball">
-          <div class="shop-cart-ball-inner"></div>
-        </div>
-      </transition>
+      <img src="./img/addBig.svg" width="22" height="22">
     </div>
   </div>
 </template>
