@@ -16,7 +16,6 @@
   transform: translate(-50%,-50%);
   height: 80px;
   width: 80px;
-  z-index: 99;
   background-color: white;
 }
 .seller.shop-title{

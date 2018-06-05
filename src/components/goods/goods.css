@@ -171,3 +171,9 @@
   bottom: 0;
   z-index: 999;
 }
+.food-details{
+  z-index: 50;
+  height: 400px;
+  width:250px;
+  background-color: deepskyblue;
+}

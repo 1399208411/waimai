@@ -3,7 +3,8 @@
   <div class="goods" id="goods">
     <div class="menu-wrapper">
       <ul>
-        <li v-for="(item,index) in goods" class="menu-item" :class="{'current': currentIndex===index }" @click="selectMenu(index)">
+        <li v-for="(item,index) in goods" class="menu-item" :class="{'current': currentIndex===index }"
+            @click="selectMenu(index)">
           <span class="text border-1px">
             <span v-show="item.type>0" class="goods-icon" :class="classMap[item.type]"></span>{{item.name}}
           </span>
@@ -20,7 +21,7 @@
                 <img width="57" height="57" :src="food.icon">
               </div>
               <div class="content food">
-                <h2 class="name food">{{food.name}}</h2>
+                <h2 class="name food" @click="showFood(food)">{{food.name}}</h2>
                 <p class="desc food">{{food.description}}</p>
                 <div class="extra food">
                   <span class="count">月售{{food.sellCount}}份</span>
@@ -39,13 +40,31 @@
         </li>
       </ul>
     </div>
-    <shop-cart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shop-cart>
+    <!--<mt-popup v-model="showFoodFlag">-->
+      <!--<div class="food-details">-->
+        <!--<div class="food-pic">-->
+          <!--<img src="" alt="">-->
+        <!--</div>-->
+        <!--<div class="food-dec">-->
+          <!--<h1 class="food-name">{{this.selectFood.name}}</h1>-->
+          <!--<p class="desc">月售{{this.selectFood.sellCount}}份 好评率{{selectFood.rating}}%</p>-->
+        <!--</div>-->
+        <!--<span class="food price">￥{{this.selectFood.price}}</span>-->
+        <!--<span class="cart-control-wrapper">-->
+                    <!--<cart-control :food="this.selectFood"></cart-control>-->
+                  <!--</span>-->
+      <!--</div>-->
+    <!--</mt-popup>-->
+    <shop-cart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice"
+               :min-price="seller.minPrice">
+    </shop-cart>
   </div>
 </template>
 <script>
   import BScroll from 'better-scroll'
   import shopCart from '../shopcart/ShopCart.vue'
   import cartControl from '../cartcontrol/CartControl.vue'
+
   const ERR_OK = 0;
   var log = console.log;
   export default {
@@ -58,7 +77,9 @@
       return {
         goods: [],
         listHeight: [],//菜单栏各个模块的高度
-        scrollY: 0
+        scrollY: 0,
+        showFoodFlag: false,
+        selectFood: {}
       };
     },
     components: {
@@ -77,16 +98,20 @@
         }
         return 0;
       },
-      selectFoods(){
+      selectFoods() {
         let foods = [];
-        this.goods.forEach((good)=>{
-          good.foods.forEach((food)=>{
-            if(food.count){
+        this.goods.forEach((good) => {
+          good.foods.forEach((food) => {
+            if (food.count) {
               foods.push(food);
             }
           });
         });
         return foods;
+      },
+      descFood(){
+        let food = {};
+
       }
     },
     created() {
@@ -105,19 +130,19 @@
     mounted() {
     },
     methods: {
-      selectMenu(index){
+      selectMenu(index) {
         let foodList = document.querySelectorAll('.food-list-hook');//获取滚动的列表
         let el = foodList[index];//获取指定的元素
-        this.foodsScroll.scrollToElement(el,300);//跳转至指定元素位置
+        this.foodsScroll.scrollToElement(el, 300);//跳转至指定元素位置
       },
       _initScroll() {
         let memuWarpper = document.querySelector('.menu-wrapper');
         let foodWrapper = document.querySelector('.foods-wrapper');
-        this.meunScroll = new BScroll(memuWarpper,{
-          click:true
+        this.meunScroll = new BScroll(memuWarpper, {
+          click: true
         });
         this.foodsScroll = new BScroll(foodWrapper, {
-          click:true,
+          click: true,
           probeType: 3
         });
         this.foodsScroll.on('scroll', (pos) => {
@@ -133,6 +158,10 @@
           height += item.clientHeight;
           this.listHeight.push(height);
         }
+      },
+      showFood(item) {
+        this.showFoodFlag = true;
+        this.selectFood = item;
       }
     }
   }
