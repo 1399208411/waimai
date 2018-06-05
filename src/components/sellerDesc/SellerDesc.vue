@@ -1,7 +1,7 @@
 <!--  -->
 <template>
-  <div class="rating" id="rating">
-    评论
+  <div class="seller-desc" id="seller-desc">
+    商家介绍
   </div>
 </template>
 
@@ -26,5 +26,5 @@
 </script>
 
 <style>
-@import "rating.css";
+@import "seller-desc.css";
 </style>

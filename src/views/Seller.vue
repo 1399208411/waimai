@@ -15,8 +15,10 @@
         <goods :seller="seller"></goods>
       </mt-tab-container-item>
       <mt-tab-container-item id="2" class="tab-item">
+        <rating></rating>
       </mt-tab-container-item>
       <mt-tab-container-item id="3" class="tab-item">
+        <seller-desc></seller-desc>
       </mt-tab-container-item>
     </mt-tab-container>
   </div>
@@ -24,6 +26,8 @@
 
 <script>
   import Goods from '../components/goods/Goods.vue'
+  import Rating from '../components/rating/Rating.vue'
+  import SellerDesc from '../components/sellerDesc/SellerDesc.vue'
   import SellerHeader from '../components/SellerHeader/Header.vue'
   const log = console.log;
   const ERR_OK = 0;
@@ -37,7 +41,9 @@
     },
     components: {
       Goods,
-      SellerHeader
+      SellerHeader,
+      Rating,
+      SellerDesc
     },
     computed: {},
     created() {
@@ -57,10 +63,14 @@
       hideHeader(){
         this.headerShow = false;
         document.getElementById('goods').style.setProperty('top','50px','important');
+        document.getElementById('rating').style.setProperty('top','50px','important');
+        document.getElementById('seller-desc').style.setProperty('top','50px','important');
       },
       showHeader(){
         this.headerShow = true;
         document.getElementById('goods').style.setProperty('top','346px','important');
+        document.getElementById('rating').style.setProperty('top','346px','important');
+        document.getElementById('seller-desc').style.setProperty('top','346px','important');
       }
     }
   }
