@@ -6,7 +6,9 @@ import router from './router'
 import VueResource from 'vue-resource'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import VueTouch from 'vue-touch'
 
+Vue.use(VueTouch,{name:'v-touch'});
 Vue.use(MintUI);
 Vue.use(VueResource);
 Vue.config.productionTip = false;

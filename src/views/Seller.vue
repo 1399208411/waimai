@@ -1,12 +1,15 @@
 <template>
   <div class="page-navbar">
-    <seller-header :seller="seller" v-show="headerShow"></seller-header>
-    <!--<a @dblclick="hideHeader">ggg</a>-->
-    <mt-navbar class="page-part" v-model="selected" @click.native="hideHeader">
-      <mt-tab-item id="1">点餐</mt-tab-item>
-      <mt-tab-item id="2">评价</mt-tab-item>
-      <mt-tab-item id="3">商家</mt-tab-item>
-    </mt-navbar>
+    <!--<transition name="slide-fade">-->
+      <seller-header :seller="seller" v-show="headerShow"></seller-header>
+    <!--</transition>-->
+    <v-touch v-on:swipeup="hideHeader" v-on:swipedown="showHeader">
+      <mt-navbar class="page-part" v-model="selected">
+        <mt-tab-item id="1">点餐</mt-tab-item>
+        <mt-tab-item id="2">评价</mt-tab-item>
+        <mt-tab-item id="3">商家</mt-tab-item>
+      </mt-navbar>
+    </v-touch>
     <mt-tab-container v-model="selected" id="tab-container-item">
       <mt-tab-container-item id="1" class="tab-item">
         <goods :seller="seller"></goods>
@@ -54,18 +57,15 @@
       hideHeader(){
         this.headerShow = false;
         document.getElementById('goods').style.setProperty('top','50px','important');
+      },
+      showHeader(){
+        this.headerShow = true;
+        document.getElementById('goods').style.setProperty('top','346px','important');
       }
     }
   }
 </script>
 <style>
-  .tab {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    border-bottom:1px solid rgba(7,17,27,0.1);
-  }
   .tab-item {
     margin-top: 4px;
   }
@@ -74,7 +74,15 @@
     font-size: 14px;
     color: rgb(77, 85, 93);
   }
-  .router-link-active{/*路由选中的时候生效*/
-    color: rgb(240,20,20);
+  .slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active for below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
   }
 </style>
