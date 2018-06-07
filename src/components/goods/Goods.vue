@@ -167,5 +167,5 @@
   }
 </script>
 <style>
-  @import 'goods.css';
+  @import './goods.css';
 </style>
