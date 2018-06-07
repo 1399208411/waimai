@@ -8,10 +8,10 @@
     </mt-header>
     <div style="">
       <div class="shop-cover">
-        <img src="./img/shop-over.jpg" width="100%" height="100%">
+        <img src="img/shop-over.jpg" width="100%" height="100%">
       </div>
       <div class="sign">
-        <img src="./img/pic.svg"width="100%" height="100%">
+        <img src="img/pic.svg" width="100%" height="100%">
       </div>
     </div>
     <section class="seller content">
@@ -24,7 +24,7 @@
         <div class="remark">欢迎光临，用餐高峰请提前下单 谢谢</div>
       </div>
       <div class="seller discount">
-        <img src="./img/decrease_2@2x.png" height="16" width="auto">
+        <img src="img/decrease_2@2x.png" height="16" width="auto">
         <span>&nbsp;满80-40</span>
         <span class="discount-count">26个优惠></span>
       </div>

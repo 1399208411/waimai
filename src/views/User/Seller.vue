@@ -25,10 +25,10 @@
 </template>
 
 <script>
-  import Goods from '../components/goods/Goods.vue'
-  import Rating from '../components/rating/Rating.vue'
-  import SellerDesc from '../components/sellerDesc/SellerDesc.vue'
-  import SellerHeader from '../components/SellerHeader/Header.vue'
+  import Goods from '../../components/User/goods/Goods.vue'
+  import Rating from '../../components/User/rating/Rating.vue'
+  import SellerDesc from '../../components/User/sellerDesc/SellerDesc.vue'
+  import SellerHeader from '../../components/User/SellerHeader/Header.vue'
   const log = console.log;
   const ERR_OK = 0;
   export default {

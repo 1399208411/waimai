@@ -6,7 +6,7 @@
         <div class="logo-wrapper">
           <div class="logo shop-cart" :class="{'highLight':totalCount>0}">
             <i class="icon-shopping-cart" :class="{'highLight':totalCount>0}">
-              <img src="./img/cart.svg" width="20" height="20">
+              <img src="img/cart.svg" width="20" height="20">
             </i>
           </div>
           <div class="foodNum" v-show="totalCount">{{totalCount}}</div>
@@ -46,7 +46,7 @@
 
 <script>
   import BScroll from 'better-scroll'
-  import MtPopup from "../../../node_modules/mint-ui/packages/popup/src/popup.vue";
+  import MtPopup from "../../../../node_modules/mint-ui/packages/popup/src/popup.vue";
   import cartControl from '../cartcontrol/CartControl.vue'
 
   export default {
@@ -151,5 +151,5 @@
 </script>
 
 <style>
-  @import "./shopcart.css";
+  @import "shopcart.css";
 </style>

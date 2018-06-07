@@ -67,7 +67,7 @@
   color: #80857a;
 }
 .icon-shopping-cart.highLight img{
-  content: url("./img/lightCart.svg");
+  content: url("img/lightCart.svg");
 }
 .price.shop-cart {
   display: inline-block;
