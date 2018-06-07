@@ -33,7 +33,6 @@
 </template>
 
 <script>
-  import './sellerHeader.css';
 	export default {
 	  props:{
 	    seller:{
@@ -60,5 +59,5 @@
 </script>
 
 <style>
-
+  @import './sellerHeader.css';
 </style>

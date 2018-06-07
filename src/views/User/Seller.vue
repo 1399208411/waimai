@@ -28,7 +28,7 @@
   import Goods from '../../components/User/goods/Goods.vue'
   import Rating from '../../components/User/rating/Rating.vue'
   import SellerDesc from '../../components/User/sellerDesc/SellerDesc.vue'
-  import SellerHeader from '../../components/User/SellerHeader/Header.vue'
+  import SellerHeader from '../../components/User/sellerHeader/Header.vue'
   const log = console.log;
   const ERR_OK = 0;
   export default {
