@@ -15,7 +15,7 @@
         <goods :seller="seller"></goods>
       </mt-tab-container-item>
       <mt-tab-container-item id="2" class="tab-item">
-        <rating></rating>
+        <rating :seller="seller"></rating>
       </mt-tab-container-item>
       <mt-tab-container-item id="3" class="tab-item">
         <seller-desc></seller-desc>
@@ -63,13 +63,13 @@
       hideHeader(){
         this.headerShow = false;
         document.getElementById('goods').style.setProperty('top','50px','important');
-        document.getElementById('rating').style.setProperty('top','50px','important');
+        document.getElementById('ratings').style.setProperty('top','50px','important');
         document.getElementById('seller-desc').style.setProperty('top','50px','important');
       },
       showHeader(){
         this.headerShow = true;
         document.getElementById('goods').style.setProperty('top','346px','important');
-        document.getElementById('rating').style.setProperty('top','346px','important');
+        document.getElementById('ratings').style.setProperty('top','346px','important');
         document.getElementById('seller-desc').style.setProperty('top','346px','important');
       }
     }

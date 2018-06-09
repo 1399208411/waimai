@@ -4,8 +4,8 @@
 .star>.star-item{
   display: inline-block;
   background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
+  /*width: 10px;*/
+  /*height: 10px;*/
   margin-right: 2px;
   -webkit-background-size: 20px 20px;
   background-size: 20px 20px;
@@ -15,10 +15,13 @@
 }
 .star-item.on{
   background-image: url("./img/star-on.svg");
+  background-size: 100% 100%;
 }
 .star-item.half{
   background-image: url("./img/star-half.svg");
+  background-size: 100% 100%;
 }
 .star-item.off{
   background-image: url("img/star-off.svg");
+  background-size: 100% 100%;
 }

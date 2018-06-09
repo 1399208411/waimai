@@ -1,61 +1,56 @@
-<!--  -->
 <template>
-  <div class="rating" id="rating">
-    <div class="ratings-content"
-         v-infinite-scroll="loadMore"
-         infinite-scroll-distance="10">
-      <div class="star-wrapper">
-        <star :score="2.5"></star>
+  <div class="ratings" id="ratings">
+    <div class="ratings-content">
+      <div class="over-view">
+        <div class="over-view-left">
+          <h1 class="ratings-score">{{seller.score}}</h1>
+          <div class="ratings-title">综合评分</div>
+          <div class="ratings-rank">高于周边商家{{seller.rankRate}}%</div>
+        </div>
+        <div class="over-view-right">
+          <div class="ratings-score-wrapper">
+            <span class="ratings-score-title">服务态度</span>
+            <star :size="36" :score="seller.serviceScore" class="ratings-star"></star>
+            <span class="left-ratings-score">{{seller.serviceScore}}</span>
+          </div>
+          <div class="ratings-score-wrapper">
+            <span class="ratings-score-title">商品评分</span>
+            <star :size="36" :score="seller.foodScore" class="ratings-star"></star>
+            <span class="left-ratings-score">{{seller.foodScore}}</span>
+          </div>
+          <div class="ratings-delivery-wrapper">
+            <span class="ratings-score-title">送达时间</span>
+            <span class="ratings-delivery">{{seller.deliveryTime}}分钟</span>
+          </div>
+        </div>
       </div>
-      <ul>
-        <li v-for="(item,index) in list" :key="index">
-          hello
-        </li>
-      </ul>
-      评论
     </div>
   </div>
 </template>
 
 <script>
   import Star from '../star/Star.vue'
-	export default {
-		data() {
-			return {
-			  list:[],
-			  loading:false,
-        allLoaded:false,
-        wrapperHeight:0
-      };
-		},
+  export default {
+    props:{
+      seller:{
+        type:Object
+      }
+    },
+    data(){
+      return{
 
-		components: {
-		  Star
+      }
+    },
+    components:{
+      Star
+    },
+    created() {
     },
 
-		computed: {},
-
-		created() {
-		},
-
-		mounted() {
-		},
-
-		methods: {
-      loadMore() {
-        this.loading = true;
-        setTimeout(() => {
-          let last = this.list[this.list.length - 1];
-          for (let i = 1; i <= 30; i++) {
-            this.list.push(last + i);
-          }
-          this.loading = false;
-        }, 2500);
-      }
+    methods: {
     }
-	}
+  };
 </script>
-
 <style>
-@import "rating.css";
+  @import "rating.css";
 </style>
