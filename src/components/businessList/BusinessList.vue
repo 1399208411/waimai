@@ -1,14 +1,12 @@
 <!--  -->
 <template>
-  <div class="seller-desc" id="seller-desc">
-  </div>
+  <div></div>
 </template>
 
 <script>
 	export default {
 		data() {
-			return {
-      };
+			return {};
 		},
 
 		components: {},
@@ -21,11 +19,10 @@
 		mounted() {
 		},
 
-		methods: {
-    }
+		methods: {}
 	}
 </script>
 
 <style>
-@import "seller-desc.css";
+
 </style>

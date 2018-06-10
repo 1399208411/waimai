@@ -1,5 +1,5 @@
 .seller-desc{
-  display: flex;
+  /*display: flex;*/
   position: fixed;
   top: 346px;
   bottom:44px;
@@ -7,3 +7,4 @@
   /*height:357px;*/
   overflow: hidden;
 }
+

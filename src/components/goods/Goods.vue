@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div class="goods" id="goods">
-    <div class="menu-wrapper">
+    <div class="menu-wrapper" ref="menuWrapper">
       <ul>
         <li v-for="(item,index) in goods" class="menu-item" :class="{'current': currentIndex===index }"
             @click="selectMenu(index)">
@@ -138,7 +138,7 @@
       _initScroll() {
         let memuWarpper = document.querySelector('.menu-wrapper');
         let foodWrapper = document.querySelector('.foods-wrapper');
-        this.meunScroll = new BScroll(memuWarpper, {
+        this.meunScroll = new BScroll(this.$refs.menuWrapper, {
           click: true
         });
         this.foodsScroll = new BScroll(foodWrapper, {

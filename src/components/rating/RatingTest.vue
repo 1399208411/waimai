@@ -1,5 +1,6 @@
+<!--  -->
 <template>
-  <div class="ratings" id="ratings" ref="ratings">
+  <div class="ratings" id="ratings" ref="ratings_list">
     <div class="ratings-content">
       <div class="over-view">
         <div class="over-view-left">
@@ -28,11 +29,11 @@
       <rating-select @select="selectRating" @toggle="toggleContent" :selectType="selectType"
                      :onlyContent="onlyContent"
                      :ratings="ratings"></rating-select>
-      <div class="rating-con-wrapper" ref="ratings">
+      <div class="rating-con-wrapper">
         <ul>
-          <li v-for="(rating,index) in ratings" v-show="needShow(rating.rateType, rating.text)" class="rating-item">
+          <li v-for="(rating,index) in ratings"  class="rating-item">
             <div class="rating-avatar">
-              <img :src="rating.avatar">
+              <!--<img :src="rating.avatar">-->
             </div>
             <div class="rating-content">
               <h1 class="rating-name">{{rating.username}}</h1>
@@ -41,10 +42,18 @@
                 <span class="rating-delivery" v-show="rating.deliveryTime"></span>
               </div>
               <p class="rating-content-text">{{rating.text}}</p>
+              <div class="recommend">
+                <span class="icon-thumb_up"></span>
+                <span class="item" v-for="item in rating.recommend">{{item}}</span>
+              </div>
+              <div class="time">
+                {{rating.rateTime}}
+              </div>
             </div>
           </li>
         </ul>
       </div>
+
     </div>
   </div>
 </template>
@@ -54,73 +63,61 @@
   import Star from '../star/Star.vue'
   import RatingSelect from '../ratingSelect/RatingSelect.vue'
   import Split from '../split/Split.vue'
-
   const ALL = 2;
   const ERR_OK = 0;
-  const log = console.log;
-  export default {
-    props: {
-      seller: {
-        type: Object
+	export default {
+    props:{
+      seller:{
+        type:Object
       }
     },
-    data() {
-      return {
-        ratings: [],
-        selectType: ALL,
-        onlyContent: true
-      }
-    },
-    components: {
+		data() {
+			return {
+        ratings:[],
+        selectType:ALL,
+        onlyContent:true
+      };
+		},
+
+		components: {
       Star,
       RatingSelect,
       Split
     },
-    created() {
-      this.$http.get('/api/ratings').then((response) => {
+
+		computed: {},
+
+		created() {
+      this.$http.get('/api/ratings').then((response)=>{
         let res = response.body;
-        if (res.errno === ERR_OK) {
+        if(res.errno===ERR_OK){
           this.ratings = res.data;
           this.$nextTick(() => {
-            log(this.ratings);
-            this._initScroll();
-          });
+            this.scroll = new BScroll(this.$refs.ratings_list, {
+              click:true
+            })
+          })
         }
       });
-    },
-    mounted() {
-    },
-    methods: {
-      _initScroll() {
-        this.ratingScroll = new BScroll(this.$refs.ratings, {
-          click: true
-        });
+		},
+
+		mounted() {
+		},
+
+		methods: {
+      needShow(type, text){
+
       },
-      needShow(type, text) {
-        if (this.onlyContent && !text) {
-          return false;
-        }
-        if (this.selectType === ALL) {
-          return true;
-        } else {
-          return type === this.selectType;
-        }
+      selectRating(type){
+
       },
-      selectRating(type) {
-        this.selectType = type;
-        this.$nextTick(() => {
-          this.ratingScroll.refresh();
-        });
-      },
-      toggleContent() {
-        this.onlyContent = !this.onlyContent;
-        this.$nextTick(() => {
-          this.ratingScroll.refresh();
-        });
+      toggleContent(){
+
       }
     }
-  };
+	}
 </script>
+
 <style>
-  @import "rating.css";
+@import "test.css";
 </style>

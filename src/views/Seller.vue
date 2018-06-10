@@ -26,7 +26,7 @@
 
 <script>
   import Goods from '../components/goods/Goods.vue'
-  import Rating from '../components/rating/Rating.vue'
+  import Rating from '../components/rating/RatingTest.vue'
   import SellerDesc from '../components/sellerDesc/SellerDesc.vue'
   import SellerHeader from '../components/SellerHeader/Header.vue'
   const log = console.log;

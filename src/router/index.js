@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../views/Home.vue'
+import Index from '../views/UserIndex.vue'
 import Seller from '../views/Seller.vue'
 import Goods from '../components/goods/Goods.vue'
 import Test from '../views/test.vue'
@@ -17,8 +17,8 @@ export default new Router({
     },
     {
       path:'/',
-      name: 'Home',
-      component: Home
+      name: 'Index',
+      component: Index
     },
     {
       path:'/seller',
