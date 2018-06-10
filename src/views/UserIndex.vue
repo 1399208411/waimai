@@ -6,15 +6,10 @@
           <home></home>
         </mt-tab-container-item>
         <mt-tab-container-item id="order">
-          <!--<mt-cell v-for="(n,index) in 5" :title="'订单 ' + n" />-->
+          <order></order>
         </mt-tab-container-item>
         <mt-tab-container-item id="mine">
-          <div class="page-part">
-            <!--<mt-cell v-for="(n,index) in 12" :title="'我的 ' + n" />-->
-          </div>
-          <router-link to="/">
-            <mt-button type="danger" size="large">退出</mt-button>
-          </router-link>
+          <profile></profile>
         </mt-tab-container-item>
       </mt-tab-container>
     </div>
@@ -38,6 +33,8 @@
 
 <script>
   import Home from './Home.vue'
+  import Order from './Order.vue'
+  import Profile from './Profile.vue'
   export default {
     data() {
       return {
@@ -45,7 +42,9 @@
       };
     },
     components: {
-      Home
+      Home,
+      Order,
+      Profile
     },
 
     computed: {},

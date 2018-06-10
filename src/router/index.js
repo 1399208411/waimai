@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '../views/UserIndex.vue'
-import Seller from '../views/Seller.vue'
+import Shop from '../views/Shop.vue'
 import Goods from '../components/goods/Goods.vue'
 import Test from '../views/test.vue'
 
@@ -21,27 +21,9 @@ export default new Router({
       component: Index
     },
     {
-      path:'/seller',
-      name: 'Seller',
-      component: Seller,
-      redirect:'goods',
-      children:[
-        {
-          path:'/goods',
-          name:'Goods',
-          component:Goods
-        },
-        {
-          path: '/ratings',
-          name: 'Ratings',
-          component: Goods
-        },
-        {
-          path: '/store',
-          name: 'Store',
-          component: Goods
-        },
-      ]
+      path:'/shop',
+      name: 'Shop',
+      component: Shop
     }
   ]
 })
