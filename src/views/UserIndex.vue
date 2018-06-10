@@ -9,7 +9,7 @@
           <order></order>
         </mt-tab-container-item>
         <mt-tab-container-item id="mine">
-          <profile></profile>
+          <mine></mine>
         </mt-tab-container-item>
       </mt-tab-container>
     </div>
@@ -34,7 +34,7 @@
 <script>
   import Home from './Home.vue'
   import Order from './Order.vue'
-  import Profile from './Profile.vue'
+  import Mine from './Mine.vue'
   export default {
     data() {
       return {
@@ -44,7 +44,7 @@
     components: {
       Home,
       Order,
-      Profile
+      Mine
     },
 
     computed: {},

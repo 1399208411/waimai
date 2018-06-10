@@ -64,5 +64,5 @@
 </script>
 
 <style>
-  @import 'busilist.css';
+  @import 'shoplist.css';
 </style>

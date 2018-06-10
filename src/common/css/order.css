@@ -1,0 +1,41 @@
+.order {
+  background-color: rgba(7, 17, 27, 0.1);
+}
+
+.order-list-wrapper {
+  position: fixed;
+  top: 40px;
+  width: 100%;
+}
+
+.order-list-content {
+
+}
+
+.order-info {
+  width: 100%;
+  text-align: left;
+  /*margin-top: 12px;*/
+
+}
+
+.order-info-item {
+  display: flex;
+}
+
+.icon.shop {
+  margin: 9px 12px 12px 12px;
+}
+
+.shop-title {
+  font-size: 16px;
+}
+.order-desc .mint-cell-text{
+  margin-left: 56px;
+  color: rgba(7, 17, 27, 0.5);
+}
+.get-again {
+  width: 80px;
+  height: 30px;
+  color: deepskyblue;
+}

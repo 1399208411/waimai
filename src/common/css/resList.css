@@ -1,0 +1,28 @@
+.restaurant-list{
+
+}
+.screen-menu-wrapper{
+  display: flex;
+  position: absolute;
+  top: 40px;
+  margin: 6px 0 6px 0;
+  width: 100%;
+  font-size: 14px;
+  color: rgb(102, 102, 102);
+}
+.screen-menu-item{
+  margin-right: auto;
+}
+.screen-menu-item.first{
+  margin-left: 6px;
+}
+.screen-menu-item.last{
+  margin-right: 6px;
+}
+.shop-list-wrapper{
+  position: absolute;
+  top: 80px;
+  bottom:0;
+  width: 100%;
+  overflow: hidden;
+}

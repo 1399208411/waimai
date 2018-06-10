@@ -10,7 +10,7 @@
       <div class="business-scroll-content">
         <div class="type-list">
           <div class="type-list-one">
-            <mt-cell class="type-item" label="美食" to="/shop">
+            <mt-cell class="type-item" label="美食" to="/shoplist">
               <img slot="icon" src="../assets/logo.png" width="24" height="24">
             </mt-cell>
             <mt-cell class="type-item" label="超市">
@@ -40,7 +40,7 @@
         </div>
         <split></split>
         <p>—推荐商家—</p>
-        <business-list></business-list>
+        <shop-list></shop-list>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
   const log = console.log;
   import BScroll from 'better-scroll'
   import Split from '../components/split/Split.vue'
-  import BusinessList from '../components/businessList/BusinessList.vue'
+  import ShopList from '../components/shopList/ShopList.vue'
 
   export default {
     data() {
@@ -59,7 +59,7 @@
 
     components: {
       Split,
-      BusinessList
+      ShopList
     },
 
     computed: {},
