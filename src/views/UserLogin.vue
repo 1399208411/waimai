@@ -1,6 +1,10 @@
 <!--  -->
 <template>
-  <div></div>
+  <div>
+    <mt-header fixed title="登录/注册">
+
+    </mt-header>
+  </div>
 </template>
 
 <script>

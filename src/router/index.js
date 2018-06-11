@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '../views/UserIndex.vue'
+import UserLogin from '../views/UserLogin.vue'
 import Home from '../views/Home.vue'
 import Order from '../views/Order.vue'
 import Mine from '../views/Mine.vue'
@@ -43,6 +44,11 @@ export default new Router({
           component:Mine
         }
       ]
+    },
+    {
+      path: '/login',
+      name: 'UserLogin',
+      component: UserLogin
     },
     {
       path:'/userinfo',
