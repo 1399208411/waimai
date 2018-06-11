@@ -3,30 +3,30 @@
     <div class="">
       <mt-tab-container class="page-tabbar-container" v-model="selected">
         <mt-tab-container-item id="home">
-          <home></home>
+          <router-view/>
         </mt-tab-container-item>
         <mt-tab-container-item id="order">
-          <order></order>
+          <router-view/>
         </mt-tab-container-item>
         <mt-tab-container-item id="mine">
-          <mine></mine>
+          <router-view/>
         </mt-tab-container-item>
       </mt-tab-container>
     </div>
 
     <mt-tabbar v-model="selected" fixed>
-      <mt-tab-item id="home">
-        <img slot="icon" src="../assets/logo.png">
-        外卖
-      </mt-tab-item>
-      <mt-tab-item id="order">
+        <mt-tab-item2 id="home" route="/">
+            <img slot="icon" src="../assets/logo.png">
+            外卖
+        </mt-tab-item2>
+      <mt-tab-item2 id="order" route="/order">
         <img slot="icon" src="../assets/logo.png">
         订单
-      </mt-tab-item>
-      <mt-tab-item id="mine">
+      </mt-tab-item2>
+      <mt-tab-item2 id="mine" route="/mine">
         <img slot="icon" src="../assets/logo.png">
         我的
-      </mt-tab-item>
+      </mt-tab-item2>
     </mt-tabbar>
   </div>
 </template>
@@ -35,6 +35,7 @@
   import Home from './Home.vue'
   import Order from './Order.vue'
   import Mine from './Mine.vue'
+  import mtTabItem2 from '../components/tab-item-diy/mt-tab-item2.vue'
   export default {
     data() {
       return {
@@ -44,7 +45,8 @@
     components: {
       Home,
       Order,
-      Mine
+      Mine,
+      mtTabItem2
     },
 
     computed: {},

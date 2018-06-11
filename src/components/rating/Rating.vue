@@ -1,5 +1,5 @@
 <template>
-  <div class="ratings" id="ratings" ref="ratings">
+  <div class="ratings" id="ratings" ref="ratingsScroll">
     <div class="ratings-content">
       <div class="over-view">
         <div class="over-view-left">
@@ -82,17 +82,25 @@
         if (res.errno === ERR_OK) {
           this.ratings = res.data;
           this.$nextTick(() => {
-            log(this.ratings);
             this._initScroll();
           });
         }
       });
     },
     mounted() {
+      if(!this.ratingsScroll){
+          this._initScroll();
+      }
+    },
+    watch:{
+      'selected'(){
+        log(this.selected());
+        this._initScroll();
+      }
     },
     methods: {
       _initScroll() {
-        this.ratingScroll = new BScroll(this.$refs.ratings, {
+        this.ratingsScroll = new BScroll(this.$refs.ratingsScroll, {
           click: true
         });
       },
@@ -109,13 +117,13 @@
       selectRating(type) {
         this.selectType = type;
         this.$nextTick(() => {
-          this.ratingScroll.refresh();
+          this.ratingsScroll.refresh();
         });
       },
       toggleContent() {
         this.onlyContent = !this.onlyContent;
         this.$nextTick(() => {
-          this.ratingScroll.refresh();
+          this.ratingsScroll.refresh();
         });
       }
     }

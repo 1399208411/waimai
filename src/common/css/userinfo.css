@@ -1,0 +1,25 @@
+.user-info-container{
+  position: fixed;
+  top:40px;
+  bottom: 0;
+  /*margin-left: 8px;*/
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+}
+
+.modify-pwd{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*align-items: center;*/
+  width: 80%;
+  /*height: 50%;*/
+}
+.mod-btn{
+  margin-top: 50px;
+  margin-bottom: auto;
+}
+.error-msg{
+  color: red;
+}

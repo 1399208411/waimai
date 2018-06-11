@@ -41,19 +41,19 @@
       </ul>
     </div>
     <!--<mt-popup v-model="showFoodFlag">-->
-      <!--<div class="food-details">-->
-        <!--<div class="food-pic">-->
-          <!--<img src="" alt="">-->
-        <!--</div>-->
-        <!--<div class="food-dec">-->
-          <!--<h1 class="food-name">{{this.selectFood.name}}</h1>-->
-          <!--<p class="desc">月售{{this.selectFood.sellCount}}份 好评率{{selectFood.rating}}%</p>-->
-        <!--</div>-->
-        <!--<span class="food price">￥{{this.selectFood.price}}</span>-->
-        <!--<span class="cart-control-wrapper">-->
-                    <!--<cart-control :food="this.selectFood"></cart-control>-->
-                  <!--</span>-->
-      <!--</div>-->
+    <!--<div class="food-details">-->
+    <!--<div class="food-pic">-->
+    <!--<img src="" alt="">-->
+    <!--</div>-->
+    <!--<div class="food-dec">-->
+    <!--<h1 class="food-name">{{this.selectFood.name}}</h1>-->
+    <!--<p class="desc">月售{{this.selectFood.sellCount}}份 好评率{{selectFood.rating}}%</p>-->
+    <!--</div>-->
+    <!--<span class="food price">￥{{this.selectFood.price}}</span>-->
+    <!--<span class="cart-control-wrapper">-->
+    <!--<cart-control :food="this.selectFood"></cart-control>-->
+    <!--</span>-->
+    <!--</div>-->
     <!--</mt-popup>-->
     <shop-cart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice"
                :min-price="seller.minPrice">
@@ -109,7 +109,7 @@
         });
         return foods;
       },
-      descFood(){
+      descFood() {
         let food = {};
 
       }
@@ -136,7 +136,7 @@
         this.foodsScroll.scrollToElement(el, 300);//跳转至指定元素位置
       },
       _initScroll() {
-        let memuWarpper = document.querySelector('.menu-wrapper');
+        let ratings = document.querySelector('.ratings');
         let foodWrapper = document.querySelector('.foods-wrapper');
         this.meunScroll = new BScroll(this.$refs.menuWrapper, {
           click: true
@@ -144,6 +144,9 @@
         this.foodsScroll = new BScroll(foodWrapper, {
           click: true,
           probeType: 3
+        });
+        this.ratingsScroll = new BScroll(ratings,{
+          click:true
         });
         this.foodsScroll.on('scroll', (pos) => {
           this.scrollY = Math.abs(Math.round(pos.y));

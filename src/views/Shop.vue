@@ -26,9 +26,10 @@
 
 <script>
   import Goods from '../components/goods/Goods.vue'
-  import Rating from '../components/rating/RatingTest.vue'
+  import Rating from '../components/rating/Rating.vue'
   import SellerDesc from '../components/sellerDesc/SellerDesc.vue'
   import SellerHeader from '../components/SellerHeader/Header.vue'
+  import mtTabItem2 from '../components/tab-item-diy/mt-tab-item2.vue'
   const log = console.log;
   const ERR_OK = 0;
   export default {
@@ -43,7 +44,8 @@
       Goods,
       SellerHeader,
       Rating,
-      SellerDesc
+      SellerDesc,
+      mtTabItem2
     },
     computed: {},
     created() {

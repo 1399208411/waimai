@@ -1,11 +1,15 @@
 <!--  -->
 <template>
   <div class="order">
-    <mt-header fixed title="我的订单"></mt-header>
-    <div class="order-list-wrapper">
+    <mt-header fixed title="我的订单">
+      <router-link to="/" slot="left">
+        <mt-button icon="back">首页</mt-button>
+      </router-link>
+    </mt-header>
+    <div class="order-list-wrapper" ref="orderScroll">
       <div class="order-list-content">
         <ul>
-          <li v-for="(item,index) in 3">
+          <li v-for="(item,index) in 5">
             <split style="height: 12px"></split>
             <div class="order-info">
               <div class="order-info-item">
@@ -30,6 +34,7 @@
 
 <script>
   import Split from '../components/split/Split.vue'
+  import BScroll from 'better-scroll'
 	export default {
 		data() {
 			return {};
@@ -39,12 +44,24 @@
       Split
     },
 
-		computed: {},
+		computed: {
+
+    },
 
 		created() {
+		  this.$nextTick(()=>{
+		    this.orderScroll = new BScroll(this.$refs.orderScroll,{
+		      click:true
+        })
+      });
 		},
 
 		mounted() {
+      if(!this.orderScroll){
+        this.orderScroll = new BScroll(this.$refs.orderScroll,{
+          click:true
+        });
+      }
 		},
 
 		methods: {}
