@@ -1,39 +1,47 @@
 <!--  -->
 <template>
   <div>
-    <mt-swipe :show-indicators="false">
-      <mt-swipe-item class="slide1">1</mt-swipe-item>
-      <!--<mt-swipe-item class="slide2">2</mt-swipe-item>-->
-      <!--<mt-swipe-item class="slide3">3</mt-swipe-item>-->
-    </mt-swipe>
+    <header class="home-header">
+      <mt-cell title="仲恺农业工程学院"></mt-cell>
+      <!--<mt-search v-model="searchKey"></mt-search>-->
+      <router-link to="/search">
+        <div class="search-box">
+          <img src="../assets/搜索.svg" width="22" height="22">
+          <span>搜索外卖商家、商品名称</span>
+        </div>
+      </router-link>
+      <section class="ads-gif">
+        <img src="//fuss10.elemecdn.com/0/63/b7dbf743a3e0d9729a5db136c5c3fjpeg.jpeg?imageMogr/format/webp/">
+      </section>
+    </header>
     <div class="business-scroll-wrapper" ref="businessScroll">
       <div class="business-scroll-content">
         <div class="type-list">
           <div class="type-list-one">
-            <mt-cell class="type-item" label="美食" to="/shoplist">
+            <mt-cell class="type-item" label="美食" :to="{path:'/shoplist',query:{keyword:'美食'}}">
               <img slot="icon" src="../assets/logo.png" width="24" height="24">
             </mt-cell>
-            <mt-cell class="type-item" label="超市">
+            <mt-cell class="type-item" label="超市" :to="{path:'/shoplist',query:{keyword:'超市'}}">
               <img slot="icon" src="../assets/logo.png" width="24" height="24">
             </mt-cell>
-            <mt-cell class="type-item" label="夜宵">
+            <mt-cell class="type-item" label="夜宵" :to="{path:'/shoplist',query:{keyword:'夜宵'}}">
               <img slot="icon" src="../assets/logo.png" width="24" height="24">
             </mt-cell>
-            <mt-cell class="type-item" label="水果">
+            <mt-cell class="type-item" label="水果" :to="{path:'/shoplist',query:{keyword:'水果'}}">
               <img slot="icon" src="../assets/logo.png" width="24" height="24">
             </mt-cell>
           </div>
           <div class="type-list-one">
-            <mt-cell class="type-item" label="折扣">
+            <mt-cell class="type-item" label="折扣" :to="{path:'/shoplist',query:{keyword:'折扣'}}">
               <img slot="icon" src="../assets/logo.png" width="24" height="24">
             </mt-cell>
-            <mt-cell class="type-item" label="鲜花">
+            <mt-cell class="type-item" label="鲜花" :to="{path:'/shoplist',query:{keyword:'鲜花'}}">
               <img slot="icon" src="../assets/logo.png" width="24" height="24">
             </mt-cell>
-            <mt-cell class="type-item" label="西餐">
+            <mt-cell class="type-item" label="西餐" :to="{path:'/shoplist',query:{keyword:'西餐'}}">
               <img slot="icon" src="../assets/logo.png" width="24" height="24">
             </mt-cell>
-            <mt-cell class="type-item" label="特色">
+            <mt-cell class="type-item" label="特色" :to="{path:'/shoplist',query:{keyword:'特色'}}">
               <img slot="icon" src="../assets/logo.png" width="24" height="24">
             </mt-cell>
           </div>
@@ -54,7 +62,9 @@
 
   export default {
     data() {
-      return {};
+      return {
+        searchKey:''
+      };
     },
 
     components: {
@@ -98,6 +108,9 @@
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 8px;
-    border-bottom: none;
+    border-color: white;
+  }
+  .type-item .mint-cell-wrapper{
+    border-color: #0085ff;
   }
 </style>

@@ -1,0 +1,51 @@
+.mine-address-list{
+  position: fixed;
+  top: 40px;
+  width: 100%;
+}
+.address-item-content{
+  display: flex;
+  width: 100%;
+  padding: 4vw;
+  border-bottom: 1px solid #ddd;
+  display: -webkit-flex;
+  display: flex;
+  min-height: .813333rem;
+  min-height: 8.133333vw;
+}
+.address-content{
+  flex: 1 1 auto;
+  margin-left: 10px;
+  margin-right: auto;
+}
+.address-title{
+  font-size: 1rem;
+  margin: 0;
+  text-align: left;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.address-title .name{
+  color: #333;
+  font-weight: 700;
+}
+.address-content .address{
+  text-align: left;
+  width: 17rem;
+  color: #666;
+  font-size: .573333rem;
+  margin:0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.address-edit{
+  /*position: fixed;*/
+  /*top: auto;*/
+  /*right: 10px;*/
+  flex: 0 1 auto;
+  margin: auto 20px auto auto;
+  width: 30px;
+}

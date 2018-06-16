@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '../views/UserIndex.vue'
-import UserLogin from '../views/UserLogin.vue'
 import Home from '../views/Home.vue'
+import UserSearch from '../views/UserSearch.vue'
 import Order from '../views/Order.vue'
+import OrderDetail from '../views/OrederDetails.vue'
 import Mine from '../views/Mine.vue'
 import UserInfo from '../views/UserInfo.vue'
+import UserAddress from '../views/UserAddress.vue'
+import UserAddressEdit from '../views/UserAddressEdit.vue'
 import ShopList from '../views/RestaurantList.vue'
 import Shop from '../views/Shop.vue'
-import Goods from '../components/goods/Goods.vue'
-import Ratings from '../components/rating/Rating.vue'
-import SellerDesc from '../components/sellerDesc/SellerDesc.vue'
 import Test from '../views/test.vue'
 
 Vue.use(Router)
@@ -46,9 +46,24 @@ export default new Router({
       ]
     },
     {
-      path: '/login',
-      name: 'UserLogin',
-      component: UserLogin
+      path:'/search',
+      name:'UserSearch',
+      component:UserSearch
+    },
+    {
+      path:'/order/details',
+      name:'OrderDetail',
+      component:OrderDetail
+    },
+    {
+      path: '/useraddress',
+      name: 'UserAddress',
+      component: UserAddress
+    },
+    {
+      path: '/useraddress/edit',
+      name: 'UserAddressEdit',
+      component: UserAddressEdit
     },
     {
       path:'/userinfo',
@@ -62,25 +77,8 @@ export default new Router({
     },
     {
       path:'/shop',
-      // name: 'Shop',
+      name: 'Shop',
       component: Shop,
-      children:[
-        {
-          path:'',
-          name:'Goods',
-          component:Goods
-        },
-        {
-          path:'ratings',
-          name:'Ratings',
-          component:Ratings
-        },
-        {
-          path:'selldesc',
-          name:'SellerDesc',
-          component:SellerDesc
-        }
-      ]
     }
   ]
 })

@@ -126,6 +126,8 @@
           });
         }
       });
+      let orderId = this.$route.query.orderId;//获取路由中的参数
+      log(orderId);
     },
     mounted() {
     },

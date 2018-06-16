@@ -1,0 +1,86 @@
+.order-details-wrapper{
+  position: fixed;
+  top:40px;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.order-details-content header{
+  margin:1.5rem auto 1rem auto;
+  /*display: table-cell;*/
+  /*align-items: center;*/
+}
+.order-status{
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.help-text{
+  color: #999;
+  font-size: .5rem;
+}
+.order-shop{
+  text-align: left;
+}
+.order-shop .mint-cell-wrapper{
+  padding: 0;
+}
+.order-shop .mint-cell-title{
+  margin-left: 10px;
+}
+.cart-item{
+  display: flex;
+  color: #333;
+  min-height: 2rem;
+  border-bottom: solid 1px rgba(27,27,27,0.1);
+}
+.cart-item .food{
+  margin: auto auto auto 1rem;
+}
+.cart-item .quantity{
+  margin: auto 1rem auto auto;
+}
+.cart-item .price{
+  margin:auto 1rem auto 1rem;
+}
+.order-payment{
+  font-size: 1rem;
+  text-align: right;
+  margin-right: 1rem;
+  font-weight: 700;
+
+}
+.order-payment span{
+  font-size: .2rem;
+  font-weight: 400;
+  color:#333
+}
+.delivery-info,.order-info{
+  text-align: left;
+  color: rgb(110,110,110);
+  font-size: .5rem;
+}
+.delivery-info .list-item ,.order-info .list-item{
+  display: flex;
+  border-bottom: solid .5px rgba(27,27,27,0.1);
+  min-height: 2rem;
+  /*justify-content: center;*/
+  align-items: center;
+}
+.list-item:first-child{
+  border-top:  solid .5px rgba(27,27,27,0.1);
+}
+.list-item span{
+  margin: auto 1rem auto 1rem;
+  width: 6em;
+}
+.list-item p{
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+.order-address-content{
+  margin-left: .2rem;
+}
+.order-info{
+  text-align: left;
+}

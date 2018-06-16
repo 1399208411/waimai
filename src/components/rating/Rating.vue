@@ -62,6 +62,9 @@
     props: {
       seller: {
         type: Object
+      },
+      selected:{
+        type:String
       }
     },
     data() {
@@ -94,7 +97,7 @@
     },
     watch:{
       'selected'(){
-        log(this.selected());
+        log(this.selected);
         this._initScroll();
       }
     },

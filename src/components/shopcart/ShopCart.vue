@@ -14,7 +14,7 @@
         <div class="price shop-cart" :class="{'highLight':totalPrice>0}">￥{{totalPrice}}</div>
         <div class="desc shop-cart">另需配送费￥{{deliveryPrice}}元</div>
       </div>
-      <div class="content-right">
+      <div class="content-right" @click.stop="toPay">
         <div class="pay shop-cart" :class="payClass">{{ payDesc }}</div>
       </div>
     </div>
@@ -145,6 +145,9 @@
           return;
         }
         this.fold = !this.fold;
+      },
+      toPay(){
+        alert("给钱");
       }
     }
   }

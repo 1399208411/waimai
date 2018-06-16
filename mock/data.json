@@ -1375,5 +1375,12 @@
       "avatar": "http://static.galileo.xiaojukeji.com/static/tms/default_header.png",
       "recommend": []
     }
+  ],
+  "address":[
+    {
+     "Name":"李佳远",
+      "tel":"13698285239",
+      "address":"广东省理发师海珠区纺织路东沙街24号8栋学生宿舍112房"
+    }
   ]
 }

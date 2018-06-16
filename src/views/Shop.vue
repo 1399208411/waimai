@@ -5,20 +5,30 @@
     <!--</transition>-->
     <v-touch v-on:swipeup="hideHeader" v-on:swipedown="showHeader">
       <mt-navbar class="page-part" v-model="selected">
-        <mt-tab-item id="1">点餐</mt-tab-item>
-        <mt-tab-item id="2">评价</mt-tab-item>
-        <mt-tab-item id="3">商家</mt-tab-item>
+        <!--<mt-tab-item2 id="1" route="/shop">点餐</mt-tab-item2>-->
+        <!--<mt-tab-item2 id="2" route="/shop/ratings">评价</mt-tab-item2>-->
+        <!--<mt-tab-item2 id="3" route="/shop/selldesc">商家</mt-tab-item2>-->
+
+        <mt-tab-item id="1" >点餐</mt-tab-item>
+        <mt-tab-item id="2" >评价</mt-tab-item>
+        <mt-tab-item id="3" >商家</mt-tab-item>
       </mt-navbar>
     </v-touch>
     <mt-tab-container v-model="selected" id="tab-container-item">
       <mt-tab-container-item id="1" class="tab-item">
-        <goods :seller="seller"></goods>
+        <goods :seller="seller" :selected="this.selected"></goods>
+
+        <!--<router-view :seller="seller"></router-view>-->
       </mt-tab-container-item>
       <mt-tab-container-item id="2" class="tab-item">
-        <rating :seller="seller"></rating>
+        <rating :seller="seller" :selected="this.selected"></rating>
+
+        <!--<router-view :seller="seller"></router-view>-->
       </mt-tab-container-item>
       <mt-tab-container-item id="3" class="tab-item">
-        <seller-desc></seller-desc>
+        <seller-desc :selected="this.selected"></seller-desc>
+
+        <!--<router-view/>-->
       </mt-tab-container-item>
     </mt-tab-container>
   </div>
@@ -55,8 +65,6 @@
           this.seller = res.data;
         }
       });
-
-
     },
     mounted() {
 

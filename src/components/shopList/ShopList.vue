@@ -2,20 +2,20 @@
 <template>
   <div class="business-list">
     <ul>
-      <li class="business-item border-1px" v-for="(item,index) in 10" @click="toSeller">
+      <li class="business-item border-1px" v-for="(item,index) in sellerList" @click="toSeller(item.id)">
         <div class="icon business">
           <img width="57" height="57" src="https://fuss10.elemecdn.com/e/b1/fc3345910c85aa5c8e2023112cb71png.png?imageMogr2/thumbnail/70x70/format/webp/quality/85">
         </div>
         <div class="content business">
-          <h1 class="business-name">麦当劳</h1>
+          <h1 class="business-name">{{item.name}}</h1>
           <div class="business-info">
             <div class="business-star-wrapper">
-              <star :size="24" :score="5"></star>
-              <span class="business-sales">5 月售388单</span>
+              <star :size="24" :score="item.score"></star>
+              <span class="business-sales">{{item.score}} 月售{{item.sellCount}}单</span>
             </div>
             <div class="business-buy-info">
-              <div class="left">￥30起送 | 配送费￥5</div>
-              <div class="right">728m | 45分钟</div>
+              <div class="left">￥{{item.minPrice}}起送 | 配送费￥{{item.deliveryPrice}}</div>
+              <div class="right">728m | {{item.deliveryTime}}分钟</div>
             </div>
           </div>
           <div class="business-discount">
@@ -38,7 +38,64 @@
   import Star from '../star/Star.vue'
 	export default {
 		data() {
-			return {};
+			return {
+			  sellerList:[
+          {
+            id:"mdl",
+            name: "麦当劳",
+            deliveryTime: 45,
+            score: 4.2,
+            sellCount: 90,
+            minPrice: 30,
+            deliveryPrice: 4,
+          },
+          {
+            id:"yc",
+            name: "益茶",
+            deliveryTime: 21,
+            score: 4.5,
+            sellCount: 60,
+            minPrice: 12,
+            deliveryPrice: 4,
+          },
+          {
+            id:"gjf",
+            name: "盖浇饭",
+            deliveryTime: 15,
+            score: 5,
+            sellCount: 900,
+            minPrice: 10,
+            deliveryPrice: 4,
+          },
+          {
+            id:"qbb",
+            name: "Q堡堡",
+            deliveryTime: 5,
+            score: 4.4,
+            sellCount: 900,
+            minPrice: 10,
+            deliveryPrice: 4,
+          },
+          {
+            id:"zxjp",
+            name: "正新鸡排",
+            deliveryTime: 15,
+            score: 3,
+            sellCount: 190,
+            minPrice: 20,
+            deliveryPrice: 4,
+          },
+          {
+            id:"kfc",
+            name: "肯德基",
+            deliveryTime: 30,
+            score: 4.8,
+            sellCount: 900,
+            minPrice: 30,
+            deliveryPrice: 4,
+          },
+        ]
+      };
 		},
 
 		components: {
@@ -54,9 +111,12 @@
 		},
 
 		methods: {
-      toSeller(){
+      toSeller(shopId){
         this.$router.push({
-          path:'shop'
+          path:'shop',
+          query:{
+            shopId:shopId
+          }
         });
       }
     }

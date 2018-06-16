@@ -1,10 +1,6 @@
 <template>
   <div class="page-navbar">
-    <div class="wrapper" ref="wrapper">
-      <ul class="content">
-        <li v-for="(item,index) in 30" class="test-item">{{index}}</li>
-      </ul>
-    </div>
+
   </div>
 </template>
 
