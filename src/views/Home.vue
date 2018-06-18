@@ -18,32 +18,16 @@
       <div class="business-scroll-content">
         <div class="type-list">
           <div class="type-list-one">
-            <mt-cell class="type-item" label="美食" :to="{path:'/shoplist',query:{keyword:'美食'}}">
+            <div class="type-item" v-for="item in typeList" @click="toShop(item)">
               <img slot="icon" src="../assets/logo.png" width="24" height="24">
-            </mt-cell>
-            <mt-cell class="type-item" label="超市" :to="{path:'/shoplist',query:{keyword:'超市'}}">
-              <img slot="icon" src="../assets/logo.png" width="24" height="24">
-            </mt-cell>
-            <mt-cell class="type-item" label="夜宵" :to="{path:'/shoplist',query:{keyword:'夜宵'}}">
-              <img slot="icon" src="../assets/logo.png" width="24" height="24">
-            </mt-cell>
-            <mt-cell class="type-item" label="水果" :to="{path:'/shoplist',query:{keyword:'水果'}}">
-              <img slot="icon" src="../assets/logo.png" width="24" height="24">
-            </mt-cell>
+              <p class="food-type">{{item}}</p>
+            </div>
           </div>
           <div class="type-list-one">
-            <mt-cell class="type-item" label="折扣" :to="{path:'/shoplist',query:{keyword:'折扣'}}">
+            <div class="type-item" v-for="item in typeList2" @click="toShop(item)">
               <img slot="icon" src="../assets/logo.png" width="24" height="24">
-            </mt-cell>
-            <mt-cell class="type-item" label="鲜花" :to="{path:'/shoplist',query:{keyword:'鲜花'}}">
-              <img slot="icon" src="../assets/logo.png" width="24" height="24">
-            </mt-cell>
-            <mt-cell class="type-item" label="西餐" :to="{path:'/shoplist',query:{keyword:'西餐'}}">
-              <img slot="icon" src="../assets/logo.png" width="24" height="24">
-            </mt-cell>
-            <mt-cell class="type-item" label="特色" :to="{path:'/shoplist',query:{keyword:'特色'}}">
-              <img slot="icon" src="../assets/logo.png" width="24" height="24">
-            </mt-cell>
+              <p class="food-type">{{item}}</p>
+            </div>
           </div>
         </div>
         <split></split>
@@ -63,7 +47,9 @@
   export default {
     data() {
       return {
-        searchKey:''
+        searchKey:'',
+        typeList:["美食","超市","水果生鲜","午餐"],
+        typeList2:["大牌5折","鲜花","麻辣烫","地方菜"],
       };
     },
 
@@ -86,31 +72,35 @@
     },
 
     methods: {
+      toShop(item){
+        this.$router.push({
+          path:'/shoplist',
+          query:{
+            keyword:item
+          }
+        })
+      }
     }
   }
 </script>
 
 <style>
   @import "../common/css/home.css";
-
   .type-list {
     width: 100%;
   }
-
   .type-list-one {
     display: flex;
   }
-
   .type-item {
     display: inline-block;
     height: 40px;
-    width: 40px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 8px;
-    border-color: white;
+    width: 4rem;
+    margin: 8px auto 8px auto;
   }
-  .type-item .mint-cell-wrapper{
-    border-color: #0085ff;
+  .type-item .food-type{
+    margin: 0 auto 6px auto;
+    color: #888;
+    font-size: 12px;
   }
 </style>
