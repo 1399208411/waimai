@@ -101,6 +101,6 @@
   .type-item .food-type{
     margin: 0 auto 6px auto;
     color: #888;
-    font-size: 12px;
+    font-size: .75rem;
   }
 </style>
